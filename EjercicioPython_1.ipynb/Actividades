@@ -1,0 +1,291 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP72Ur2BqKvh1is2ZYOVWPl",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MauricioSifuentes2906/IAyRN24/blob/main/EjercicioPython_1.ipynb/Actividades\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Mauricio Sifuentes Rincon 2007963 Grupo 008 N4 Diseño de algoritmos en Python\n",
+        "#Programa1 (Pedir al usuario por su nombre y que lo salude con su nombre, excepto si se llama “Ana”, “Juan”, y “Pedro”.)\n",
+        "nombre=input(\"Ingrese su nombre: \")\n",
+        "if nombre==\"ana\" or nombre==\"juan\" or nombre==\"pedro\":\n",
+        "  print(\"no hay saludo para ti\")\n",
+        "else:\n",
+        "  print(\"hola \",nombre)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VqovBWF23Lhb",
+        "outputId": "dd4ddd17-0f5e-4c16-8e39-4a0984a5e1dc"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese su nombre: MAU\n",
+            "hola  MAU\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Mauricio Sifuentes Rincon 2007693 Grupo 008 N4 Diseño de algoritmos en Python\n",
+        "#Programa2 (Por medio de una función, se le pide al usuario una lista de N elementos y como resultado invierta el sentido de la lista.)\n",
+        "def lista_elem (cantidadelem):\n",
+        "  for numero in range(cantidadelem,0,-1):\n",
+        "    print(numero)\n",
+        "\n",
+        "cantidadelem= int(input(\"¿cuantos elementos quieres?: \"))\n",
+        "lista_elem(cantidadelem)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8ZcaHr2g57sN",
+        "outputId": "74601e8c-47a6-4c65-c323-55b764384ad6"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "¿cuantos elementos quieres?: 5\n",
+            "5\n",
+            "4\n",
+            "3\n",
+            "2\n",
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Mauricio Sifuentes Rincon 2007693 Grupo 008 N4 Diseño de algoritmos en Python\n",
+        "#Programa3 (Algoritmo que le pregunta al usuario cuántos números de la serie de Fibonacci quiere generar y que al final los imprima.)\n",
+        "cant_num_serie= int(input(\"Ingrese cuantos numeros de la serie de Fibonacci quiere obtener: \"))\n",
+        "list_fibonacci=[0,1]\n",
+        "\n",
+        "for numero in range (2, cant_num_serie):\n",
+        "  sig_num_list= list_fibonacci[-1] + list_fibonacci[-2]\n",
+        "  list_fibonacci.append(sig_num_list)\n",
+        "\n",
+        "print(\"Serie de Fibonacci: \")\n",
+        "for numero in list_fibonacci:\n",
+        "  print(numero)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8HFYsCH96Wgd",
+        "outputId": "525841f4-d924-4e44-ffdc-d26d088ad95c"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese cuantos numeros de la serie de Fibonacci quiere obtener: 5\n",
+            "Serie de Fibonacci: \n",
+            "0\n",
+            "1\n",
+            "1\n",
+            "2\n",
+            "3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Mauricio Sifuentes Rincon 2007693 Grupo 008 N4 Diseño de algoritmos en Python\n",
+        "#Programa4 (Juego de adivinar el número: Crea un programa que genere un número aleatorio entre 1 y 100,\n",
+        "#y luego le pida al usuario que adivine el número.)\n",
+        "import random\n",
+        "numrandom= random.randint(1,100)\n",
+        "\n",
+        "while True:\n",
+        "\n",
+        "  num_adivinar=int(input(\"Que numero crees que es?: \"))\n",
+        "  if num_adivinar > numrandom:\n",
+        "    print(\"El numero que adivinaste es mayor, intenta de nuevo\")\n",
+        "  elif num_adivinar < numrandom:\n",
+        "    print(\"El numero que adivinaste es menor, intenta de nuevo\")\n",
+        "  else:\n",
+        "    print(\"Felicidades, adivinaste el numero\")\n",
+        "    break\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CWAZY1g86Qrc",
+        "outputId": "898059cb-04fa-4ca2-dc99-b757c89bd646"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Que numero crees que es?: 50\n",
+            "El numero que adivinaste es menor, intenta de nuevo\n",
+            "Que numero crees que es?: 66\n",
+            "El numero que adivinaste es menor, intenta de nuevo\n",
+            "Que numero crees que es?: 70\n",
+            "El numero que adivinaste es menor, intenta de nuevo\n",
+            "Que numero crees que es?: 80\n",
+            "El numero que adivinaste es menor, intenta de nuevo\n",
+            "Que numero crees que es?: 90\n",
+            "El numero que adivinaste es menor, intenta de nuevo\n",
+            "Que numero crees que es?: 99\n",
+            "El numero que adivinaste es mayor, intenta de nuevo\n",
+            "Que numero crees que es?: 95\n",
+            "El numero que adivinaste es menor, intenta de nuevo\n",
+            "Que numero crees que es?: 97\n",
+            "Felicidades, adivinaste el numero\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Mauricio Sifuentes Rincon 2007693 Grupo 008 N4 Diseño de algoritmos en Python\n",
+        "#Programa5 (Escribe un programa que solicite al usuario un rango de números y muestre todos los números primos dentro de ese rango.)\n",
+        "num_inicio=int(input(\"Inicio del rango: \"))\n",
+        "num_final=int(input(\"Fin del rango: \"))\n",
+        "for num1 in range (num_inicio, num_final):\n",
+        "  if num1 > 1:\n",
+        "    si_es_primo= True\n",
+        "    for num2 in range (2, int(num1**0.5)+1):\n",
+        "      if num1 % num2 == 0:\n",
+        "        si_es_primo= False\n",
+        "        break\n",
+        "    if si_es_primo:\n",
+        "      print(num1)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KP2vOQeq6oBk",
+        "outputId": "80540fd7-5e67-41f5-aead-2b878f4d5d4c"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Inicio del rango: 30\n",
+            "Fin del rango: 40\n",
+            "31\n",
+            "37\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "#Mauricio Sifuentes Rincon 2007693 Grupo 008 N4 Diseño de algoritmos en Python\n",
+        "#Programa6 (programa que solicite al usuario dos números y realice operaciones básicas como suma, resta,\n",
+        "#multiplicación y división utilizando funciones separadas para cada operación.)\n",
+        "def suma (num1, num2):\n",
+        "  suma=num1 + num2\n",
+        "  print(\"El resultado de la suma es: \",suma)\n",
+        "\n",
+        "def resta (num1, num2):\n",
+        "  resta=num1 - num2\n",
+        "  print(\"El resultado de la resta es: \",resta)\n",
+        "\n",
+        "def multiplicacion (num1, num2):\n",
+        "  multiplicacion=num1 * num2\n",
+        "  print(\"El resultado de la multiplicacion es: \",multiplicacion)\n",
+        "\n",
+        "def division (num1, num2):\n",
+        "  division=num1 / num2\n",
+        "  print(\"El resultado de la division es: \",division)\n",
+        "\n",
+        "num1= float(input(\"Ingrese el valor: \"))\n",
+        "num2= float(input(\"Ingrese el valor: \"))\n",
+        "print(\"Calculadora basica\")\n",
+        "suma(num1, num2)\n",
+        "resta(num1, num2)\n",
+        "multiplicacion(num1, num2)\n",
+        "division(num1, num2)\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4OD5wVBH6rlO",
+        "outputId": "47e80718-ce2e-45fe-9156-53b37884ce85"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese el valor: 10\n",
+            "Ingrese el valor: 5\n",
+            "Calculadora basica\n",
+            "El resultado de la suma es:  15.0\n",
+            "El resultado de la resta es:  5.0\n",
+            "El resultado de la multiplicacion es:  50.0\n",
+            "El resultado de la division es:  2.0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
